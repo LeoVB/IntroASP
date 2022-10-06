@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - IntroASP</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/IntroASP.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>       
+</head>
+<body>
+   
+    <div class="container-fluid">
+        <div class="row">
+           
+                <div class="col-4 col-sm-2 p-0" style="background-color: #000000;">
+                    <nav class="nav flex-column">
+                    <img src="/img/moptLogo1.png" alt="guts Photo" width="200px"  height="100" class="mb-5">
+                     <a class="nav-link active h3 mb-5 p-0" aria-current="page" style="color: #eee;" href="#">Bandeja de Entrada</a>
+                     <a class="nav-link active h3 mb-5 p-0" aria-current="page" style="color: #eee;" href="#">Generar Reporte</a>
+                     <a class="nav-link active h3 mb-5 p-0" aria-current="page" style="color: #eee;" href="#">Crear Solicitud</a>
+                     <a class="nav-link active h3 mb-5 p-0" aria-current="page" style="color: #eee;" href="#">Cerrar Sesión</a>
+
+                    </nav>
+                </div>
+                          
+            <div class="col-4 col-sm-2">@RenderBody()</div>
+            
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

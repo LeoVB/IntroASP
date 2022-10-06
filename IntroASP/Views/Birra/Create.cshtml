@@ -1,0 +1,50 @@
+﻿@using IntroASP.Models.ViewModels
+@model BirraViewModel
+
+<h1>Crear cerveza</h1>
+
+<hr />
+
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="Create">
+			<div asp-validation-summary="ModelOnly" class="text-danger">
+@*				asp-validation-summary es un resumen de validaciones, acá se mostraran errrores
+*@			</div>
+
+			<div class="form-group">
+@*				se relaciona directamente con el modelo
+*@				<label asp-for="Name" class="control-label"></label>
+				<input asp-for="Name" class="form-control" />
+				<span asp-validation-for="Name" class="text-danger"></span>
+			</div>
+
+				<div class="form-group">
+@*				se relaciona directamente con el modelo
+*@				<label asp-for="BeerId" class="control-label"></label>
+				<input asp-for="BeerId" class="form-control" />
+				<span asp-validation-for="BeerId" class="text-danger"></span>
+			</div>
+
+			<div class="form-group">
+@*				estos agarran el [Displsy BrandId= Marca] del viewModel
+*@				<label asp-for="BrandId" class="control-label"></label>
+				<select asp-for="BrandId" class="form-control" asp-items="ViewBag.Brands"></select>
+				<span asp-validation-for="BrandId" class="text-danger"></span>
+			</div>
+
+			<div class="for-group">
+				<input type="submit" value="Crear" class="btn btn-primary"></input>
+			</div>
+
+		</form>
+	</div>
+</div>
+
+
+@section Scripts{
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+		//partial view, de C#, invoca librerias de JS para hacer validaciones de ViewData 
+	}
+}
